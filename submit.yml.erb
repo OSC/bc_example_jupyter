@@ -1,0 +1,11 @@
+# Job submission configuration file
+#
+# @note Used to override job script batch parameters
+# @see http://www.rubydoc.info/gems/ood_core/OodCore/Job/Script
+---
+
+# PBS/Torque specific, override the node resource by specifying the ppn
+#script:
+#  native:
+#    resources:
+#      nodes: "<%= bc_num_slots.blank? ? 1 : bc_num_slots.to_i %>:ppn=28"
