@@ -10,9 +10,6 @@
 #     cluster: "owens"
 cluster: ""
 
-# Title of the app displayed in the Dashboard
-title: "Jupyter Notebook"
-
 # Description of the app displayed in the Dashboard (can use multi-line string
 # and Markdown syntax)
 description: |
