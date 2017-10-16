@@ -8,8 +8,8 @@ cd "${HOME}"
 #
 
 <%- unless context.modules.blank? -%>
-# Restore the module environment to avoid conflicts
-module restore
+# Purge the module environment to avoid conflicts
+module purge
 
 # Load the require modules
 module load <%= context.modules %>

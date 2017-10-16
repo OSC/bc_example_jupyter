@@ -24,7 +24,7 @@ OnDemand node):
   that allow users to define custom environment-based kernels from within the
   Jupyter notebook dashboard.
 - [Lmod](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod)
-  6.0.1+ or any other `module restore` and `module load <modules>` based CLI
+  6.0.1+ or any other `module purge` and `module load <modules>` based CLI
   used to load appropriate environments within the batch job before launching
   the Jupyter Notebook server.
 
