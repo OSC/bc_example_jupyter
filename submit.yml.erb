@@ -30,11 +30,3 @@ batch_connect:
 # @example Specify nodes with specific features for all jobs
 #script:
 #  native: [ "-N", "<%= bc_num_slots.blank? ? 1 : bc_num_slots.to_i %>", "-C", "c12" ]
-
-# Examples for PBS/Torque
-#
-# @example Specify the PPN for all jobs
-#script:
-#  native:
-#    resources:
-#      nodes: "<%= bc_num_slots.blank? ? 1 : bc_num_slots.to_i %>:ppn=28"
