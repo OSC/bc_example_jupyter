@@ -24,9 +24,8 @@ batch_connect:
 # Configure the job script submission parameters for the batch job here
 # @see http://www.rubydoc.info/gems/ood_core/OodCore/Job/Script
 #
-
-# Example for Slurm
-#
-# @example Specify nodes with specific features for all jobs
 #script:
-#  native: [ "-N", "<%= bc_num_slots.blank? ? 1 : bc_num_slots.to_i %>", "-C", "c12" ]
+#  queue_name: "queue1"
+#  accounting_id: "account1"
+#  email_on_started: true
+#  native: # ... array of command line arguments ...
