@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Updated date in `LICENSE.txt`.
+
 ### Fixed
 - Remove ERB from YAML comments to avoid possible crash.
   [#4](https://github.com/OSC/bc_example_jupyter/issues/4)
