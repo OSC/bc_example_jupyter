@@ -1,4 +1,7 @@
-#!/bin/bash -l
+#!/usr/bin/env bash
+
+# Benchmark info
+echo "TIMING - Starting main script at: $(date)"
 
 # Set working directory to home directory
 cd "${HOME}"
@@ -13,7 +16,14 @@ module purge
 
 # Load the require modules
 module load <%= context.modules %>
+
+# List loaded modules
+module list
 <%- end -%>
 
+# Benchmark info
+echo "TIMING - Starting jupyter at: $(date)"
+
 # Launch the Jupyter Notebook Server
+set -x
 jupyter notebook --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>

@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Increased verbosity of output to make debugging easier.
+- Does not launch template script as login shell anymore to speed up load time.
+
 ### Fixed
 - Fix job not ending if forked processes still running.
 
