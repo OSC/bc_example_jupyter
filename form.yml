@@ -27,18 +27,6 @@ attributes:
   #     modules: "python/3.5 cuda/8.0.44"
   modules: "python"
 
-  # Whether Conda extensions will be available within the Jupyter notebook
-  # server
-  #
-  # @note Allows the user to use conda environment-based kernels from their
-  #   Jupyter notebook dashboard
-  # @example Do NOT allow Conda extensions to be used
-  #   conda_extensions: "0"
-  # @example Do allow Conda extensions to be used
-  #   conda_extensions: "1"
-  # @see https://docs.continuum.io/anaconda/user-guide/tasks/use-jupyter-notebook-extensions
-  conda_extensions: "1"
-
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
   extra_jupyter_args: ""
@@ -54,7 +42,6 @@ attributes:
 #   Dashboard
 form:
   - modules
-  - conda_extensions
   - extra_jupyter_args
   - bc_account
   - bc_queue

@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Fix job not ending if forked processes still running.
 
+### Removed
+- Removed support for Anaconda Notebook extensions.
+
 ## [1.0.1] - 2018-01-03
 ### Changed
 - Updated date in `LICENSE.txt`.

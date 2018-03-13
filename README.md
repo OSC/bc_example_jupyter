@@ -19,10 +19,6 @@ OnDemand node):
 
 **Optional** software:
 
-- [Anaconda](https://www.continuum.io/anaconda-overview) 4.3.13+ and its
-  [Jupyter Notebook extensions](https://docs.continuum.io/anaconda/user-guide/tasks/use-jupyter-notebook-extensions)
-  that allow users to define custom environment-based kernels from within the
-  Jupyter notebook dashboard.
 - [Lmod](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod)
   6.0.1+ or any other `module purge` and `module load <modules>` based CLI
   used to load appropriate environments within the batch job before launching

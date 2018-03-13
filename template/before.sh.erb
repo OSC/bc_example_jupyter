@@ -54,13 +54,5 @@ c.NotebookApp.open_browser = False
 c.NotebookApp.allow_origin = '*'
 c.NotebookApp.notebook_dir = '${HOME}'
 c.NotebookApp.disable_check_xsrf = True
-<%- if context.conda_extensions == "1" -%>
-c.NotebookApp.kernel_spec_manager_class = "nb_conda_kernels.CondaKernelSpecManager"
-c.NotebookApp.nbserver_extensions = {
-  "nb_conda": True,
-  "nb_anacondacloud": True,
-  "nbpresent": True
-}
-<%- end -%>
 EOL
 )
