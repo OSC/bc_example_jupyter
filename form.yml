@@ -11,7 +11,7 @@
 cluster: "owens"
 
 # Title of the app displayed in the Dashboard
-title: "Jupyter Notebook"
+title: "Jupyter Notebook (example)"
 
 # Description of the app displayed in the Dashboard (can use multi-line string
 # and Markdown syntax)
@@ -33,7 +33,15 @@ attributes:
   #     modules: "python/3.5"
   # @example Using combination of modules
   #     modules: "python/3.5 cuda/8.0.44"
-  modules: "python"
+  custom_environment:
+    widget: text_area
+    label: Environment Setup
+    value: |
+      # Restore module environment to avoid conflicts
+      module restore
+
+      # Load required modules
+      module load python/3.5
 
   # Whether Conda extensions will be available within the Jupyter notebook
   # server
@@ -61,7 +69,7 @@ attributes:
 #   option, then it will not appear in the form page that the user sees in the
 #   Dashboard
 form:
-  - modules
+  - custom_environment
   - conda_extensions
   - extra_jupyter_args
   - bc_num_hours
