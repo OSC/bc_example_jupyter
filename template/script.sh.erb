@@ -26,4 +26,4 @@ echo "TIMING - Starting jupyter at: $(date)"
 
 # Launch the Jupyter Notebook Server
 set -x
-jupyter notebook --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>
+PYTHONPATH=$HOME/.local/lib/python3.6/site-packages jupyter notebook --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>
