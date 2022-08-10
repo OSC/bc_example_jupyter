@@ -1,31 +1,22 @@
 # Job submission configuration file
 #
 ---
+# This config comes from below URL
+# https://github.com/OSC/bc_example_jupyter/blob/custom_environment/submit.yml.erb
+# The -C option in the config provided for slurm has been removed because it does 
+# not apply to implementation at UAB. We do not use constraint list to be used with -C. 
 
-#
-# Configure the content of the job script for the batch job here
-# @see http://www.rubydoc.info/gems/ood_core/OodCore/BatchConnect/Template
-#
 batch_connect:
-  # We use the basic web server template for generating the job script
-  #
-  # @note Do not change this unless you know what you are doing!
   template: "basic"
 
-  # You can override the command used to query the hostname of the compute node
-  # here
-  #
-  # @note It is **highly** recommended this be set in the global cluster
-  #   configuration file so that all apps can take advantage of it by default
-  #
-  #set_host: "host=$(hostname -A | awk '{print $2}')"
-
-#
-# Configure the job script submission parameters for the batch job here
-# @see http://www.rubydoc.info/gems/ood_core/OodCore/Job/Script
-#
-#script:
-#  queue_name: "queue1"
-#  accounting_id: "account1"
-#  email_on_started: true
-#  native: # ... array of command line arguments ...
+script:
+  native:
+    - "-N 1"
+    - "-n <%= bc_num_slots.blank? ? 1 : bc_num_slots.to_i %>"
+    - "--mem-per-cpu=<%= bc_num_mems.blank? ? 4 : bc_num_mems.to_i %>G"
+    - "--partition=<%= bc_partition %>"
+    - "--time=<%= bc_num_hours.blank? ? 1 : bc_num_hours.to_i %>:00:00"
+    - "--job-name=ood-jupyter"
+<%- if bc_partition.include? "pascalnodes" -%>
+    - "--gres=gpu:1"
+<%- end -%>
